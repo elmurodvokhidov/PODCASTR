@@ -27,6 +27,6 @@ export default defineSchema({
         email: v.string(),
         imageUrl: v.string(),
         clerkId: v.string(),
-        username: v.string(),
+        name: v.string(),
     })
 });
