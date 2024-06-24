@@ -93,7 +93,7 @@ const CreatePodcast = () => {
                                 <SelectTrigger className={cn("text-16 w-full border-none bg-black-1 text-gray-1")}>
                                     <SelectValue className="placeholder:text-gray-1" placeholder="Select AI Voice" />
                                 </SelectTrigger>
-                                <SelectContent className="text-16 border-none bg-black-1 font-bold text-white-1 focus:ring-orange-1">
+                                <SelectContent className="text-16 border-none bg-black-1 font-bold text-white-1 focus-visible:ring-offset-orange-1">
                                     {voiceCategories.map((category) => (
                                         <SelectItem key={category} value={category} className="capitalize focus:bg-orange-1">{category}</SelectItem>
                                     ))}
@@ -123,7 +123,15 @@ const CreatePodcast = () => {
                     </div>
 
                     <div className="flex flex-col pt-10">
-                        <GeneratePodcast />
+                        <GeneratePodcast
+                            setAudioStorageId={setAudioStorageId}
+                            setAudio={setAudioUrl}
+                            voiceType={voiceType!}
+                            audio={audioUrl}
+                            voicePrompt={voicePrompt}
+                            setVoicePrompt={setVoicePrompt}
+                            setAudioDuration={setAudioDuration}
+                        />
                         <GenerateThumbnail />
 
                         <div className="mt-10 w-full">
